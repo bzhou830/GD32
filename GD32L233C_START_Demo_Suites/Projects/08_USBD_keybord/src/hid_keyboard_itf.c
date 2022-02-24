@@ -61,7 +61,7 @@ static void hid_key_data_send(usb_dev *udev)
         }
 
         if(0U != hid->data[2]) {
-            hid_report_send(udev, hid->data, 8);
+            hid_report_send(udev, hid->data, HID_IN_PACKET);
         }
     }
 }

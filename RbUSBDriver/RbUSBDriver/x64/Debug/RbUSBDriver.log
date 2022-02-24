@@ -1,0 +1,24 @@
+﻿  Building 'RbUSBDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\RbUSBDriver.inf
+  Stamping [Version] section with DriverVer=02/23/2022,17.22.15.308
+D:\repos\RbUSBDriver\RbUSBDriver\RbUSBDriver.inf(5-5): warning 1324: [Version] section should specify PnpLockdown=1.
+  Device.c
+  RbUSBDriver.vcxproj -> D:\repos\RbUSBDriver\x64\Debug\RbUSBDriver.sys
+  Done Adding Additional Store
+  Successfully signed: D:\repos\RbUSBDriver\x64\Debug\RbUSBDriver.sys
+  
+  Driver is 'Universal'.
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  D:\repos\RbUSBDriver\x64\Debug\RbUSBDriver\rbusbdriver.cat
+  Done Adding Additional Store
+  Successfully signed: D:\repos\RbUSBDriver\x64\Debug\RbUSBDriver\rbusbdriver.cat
+  

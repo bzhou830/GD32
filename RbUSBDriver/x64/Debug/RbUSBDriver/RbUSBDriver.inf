@@ -1,0 +1,89 @@
+;
+; RbUSBDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=CY001 Sample		; 自定义的安装类，即下面的类GUID值。
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5172}
+Provider=%ManufacturerName%
+CatalogFile=RbUSBDriver.cat
+DriverVer = 02/23/2022,17.22.15.308
+
+[DestinationDirs]
+DefaultDestDir = 12
+RbUSBDriver_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+RbUSBDriver.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%RbUSBDriver.DeviceDesc%=RbUSBDriver_Device, Root\RbUSBDriver ; TODO: edit hw-id
+
+[RbUSBDriver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+RbUSBDriver.sys
+
+;-------------- Service installation
+[RbUSBDriver_Device.NT.Services]
+AddService = RbUSBDriver,%SPSVCINST_ASSOCSERVICE%, RbUSBDriver_Service_Inst
+
+; -------------- RbUSBDriver driver install sections
+[RbUSBDriver_Service_Inst]
+DisplayName    = %RbUSBDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\RbUSBDriver.sys
+
+;
+;--- RbUSBDriver_Device Coinstaller installation ------
+;
+
+[RbUSBDriver_Device.NT.CoInstallers]
+AddReg=RbUSBDriver_Device_CoInstaller_AddReg
+CopyFiles=RbUSBDriver_Device_CoInstaller_CopyFiles
+
+[RbUSBDriver_Device_CoInstaller_AddReg]
+;
+
+
+[RbUSBDriver_Device_CoInstaller_CopyFiles]
+;
+
+
+[RbUSBDriver_Device.NT.Wdf]
+KmdfService =  RbUSBDriver, RbUSBDriver_wdfsect
+[RbUSBDriver_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Binean.top" ;TODO: Replace with your manufacturer name
+ClassName="USB" ; TODO: edit ClassName
+DiskName = "RbUSBDriver Installation Disk"
+RbUSBDriver.DeviceDesc = "RbUSBDriver Device"
+RbUSBDriver.SVCDESC = "RbUSBDriver Service"
