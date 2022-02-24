@@ -145,10 +145,10 @@ static usb_desc_str manufacturer_string = {
 static usb_desc_str product_string = {
     .header =
     {
-        .bLength         = USB_STRING_LEN(17U),
+        .bLength         = USB_STRING_LEN(14U),
         .bDescriptorType = USB_DESCTYPE_STR,
     },
-    .unicode_string = {'G', 'D', '3', '2', '-', 'U', 'S', 'B', '_', 'K', 'e', 'y', 'b', 'o', 'a', 'r', 'd'}
+    .unicode_string = {'G', 'D', '3', '2', '-', 'U', 'S', 'B', '_', 'M', 'o', 'u', 's', 'e'}
 };
 
 /* USB serial string */
