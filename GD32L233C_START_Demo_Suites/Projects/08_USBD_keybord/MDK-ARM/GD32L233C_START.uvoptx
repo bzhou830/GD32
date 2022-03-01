@@ -559,8 +559,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\class\device\hid\Source\standard_hid_core.c</PathWithFileName>
-      <FilenameWithoutPath>standard_hid_core.c</FilenameWithoutPath>
+      <PathWithFileName>..\src\keyboard.c</PathWithFileName>
+      <FilenameWithoutPath>keyboard.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -5,14 +5,14 @@ Component: ARM Compiler 6.16 Tool: armlink [5dfeaa00]
 Section Cross References
 
     main.o(.text.main) refers to gd32l23x_usbd_hw.o(.text.rcu_config) for rcu_config
-    main.o(.text.main) refers to standard_hid_core.o(.text.hid_itfop_register) for hid_itfop_register
+    main.o(.text.main) refers to keyboard.o(.text.hid_itfop_register) for hid_itfop_register
     main.o(.text.main) refers to usbd_core.o(.text.usbd_init) for usbd_init
     main.o(.text.main) refers to gd32l23x_usbd_hw.o(.text.nvic_config) for nvic_config
     main.o(.text.main) refers to main.o(.text.usbd_connect) for usbd_connect
     main.o(.text.main) refers to main.o(.bss.usb_hid) for usb_hid
     main.o(.text.main) refers to hid_keyboard_itf.o(.data.fop_handler) for fop_handler
-    main.o(.text.main) refers to standard_hid_core.o(.data.hid_desc) for hid_desc
-    main.o(.text.main) refers to standard_hid_core.o(.data.hid_class) for hid_class
+    main.o(.text.main) refers to keyboard.o(.data.hid_desc) for hid_desc
+    main.o(.text.main) refers to keyboard.o(.data.hid_class) for hid_class
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     main.o(.ARM.exidx.text.usbd_connect) refers to main.o(.text.usbd_connect) for [Anonymous Symbol]
     gd32l23x_it.o(.ARM.exidx.text.NMI_Handler) refers to gd32l23x_it.o(.text.NMI_Handler) for [Anonymous Symbol]
@@ -31,7 +31,7 @@ Section Cross References
     hid_keyboard_itf.o(.text.key_config) refers to gd32l23x_gpio.o(.text.gpio_mode_set) for gpio_mode_set
     hid_keyboard_itf.o(.ARM.exidx.text.key_config) refers to hid_keyboard_itf.o(.text.key_config) for [Anonymous Symbol]
     hid_keyboard_itf.o(.text.hid_key_data_send) refers to hid_keyboard_itf.o(.text.key_state) for key_state
-    hid_keyboard_itf.o(.text.hid_key_data_send) refers to standard_hid_core.o(.text.hid_report_send) for hid_report_send
+    hid_keyboard_itf.o(.text.hid_key_data_send) refers to keyboard.o(.text.hid_report_send) for hid_report_send
     hid_keyboard_itf.o(.ARM.exidx.text.hid_key_data_send) refers to hid_keyboard_itf.o(.text.hid_key_data_send) for [Anonymous Symbol]
     hid_keyboard_itf.o(.text.key_state) refers to gd32l23x_gpio.o(.text.gpio_input_bit_get) for gpio_input_bit_get
     hid_keyboard_itf.o(.ARM.exidx.text.key_state) refers to hid_keyboard_itf.o(.text.key_state) for [Anonymous Symbol]
@@ -630,36 +630,36 @@ Section Cross References
     usbd_transc.o(.ARM.exidx.text._usb_in0_transc) refers to usbd_transc.o(.text._usb_in0_transc) for [Anonymous Symbol]
     usbd_transc.o(.ARM.exidx.text.usb_0len_packet_send) refers to usbd_transc.o(.text.usb_0len_packet_send) for [Anonymous Symbol]
     usbd_transc.o(.ARM.exidx.text.usbd_ep_stall) refers to usbd_transc.o(.text.usbd_ep_stall) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_init) refers to standard_hid_core.o(.text.usbd_ep_init) for usbd_ep_init
-    standard_hid_core.o(.text.hid_init) refers to standard_hid_core.o(.bss.hid_init.hid_handler) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_init) refers to standard_hid_core.o(.data.hid_config_desc) for hid_config_desc
-    standard_hid_core.o(.text.hid_init) refers to standard_hid_core.o(.data.hid_class) for hid_class
-    standard_hid_core.o(.ARM.exidx.text.hid_init) refers to standard_hid_core.o(.text.hid_init) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_deinit) refers to standard_hid_core.o(.text.usbd_ep_deinit) for usbd_ep_deinit
-    standard_hid_core.o(.ARM.exidx.text.hid_deinit) refers to standard_hid_core.o(.text.hid_deinit) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_req_handler) refers to standard_hid_core.o(.text.usb_transc_config) for usb_transc_config
-    standard_hid_core.o(.text.hid_req_handler) refers to standard_hid_core.o(.data.hid_config_desc) for hid_config_desc
-    standard_hid_core.o(.text.hid_req_handler) refers to standard_hid_core.o(.rodata.hid_report_desc) for hid_report_desc
-    standard_hid_core.o(.ARM.exidx.text.hid_req_handler) refers to standard_hid_core.o(.text.hid_req_handler) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_data_in_handler) refers to usbd_core.o(.text.usbd_ep_send) for usbd_ep_send
-    standard_hid_core.o(.ARM.exidx.text.hid_data_in_handler) refers to standard_hid_core.o(.text.hid_data_in_handler) for [Anonymous Symbol]
-    standard_hid_core.o(.ARM.exidx.text.hid_itfop_register) refers to standard_hid_core.o(.text.hid_itfop_register) for [Anonymous Symbol]
-    standard_hid_core.o(.text.hid_report_send) refers to usbd_core.o(.text.usbd_ep_send) for usbd_ep_send
-    standard_hid_core.o(.ARM.exidx.text.hid_report_send) refers to standard_hid_core.o(.text.hid_report_send) for [Anonymous Symbol]
-    standard_hid_core.o(.ARM.exidx.text.usbd_ep_init) refers to standard_hid_core.o(.text.usbd_ep_init) for [Anonymous Symbol]
-    standard_hid_core.o(.ARM.exidx.text.usbd_ep_deinit) refers to standard_hid_core.o(.text.usbd_ep_deinit) for [Anonymous Symbol]
-    standard_hid_core.o(.ARM.exidx.text.usb_transc_config) refers to standard_hid_core.o(.text.usb_transc_config) for [Anonymous Symbol]
-    standard_hid_core.o(.data.usbd_hid_strings) refers to standard_hid_core.o(.data.usbd_language_id_desc) for [Anonymous Symbol]
-    standard_hid_core.o(.data.usbd_hid_strings) refers to standard_hid_core.o(.data.manufacturer_string) for [Anonymous Symbol]
-    standard_hid_core.o(.data.usbd_hid_strings) refers to standard_hid_core.o(.data.product_string) for [Anonymous Symbol]
-    standard_hid_core.o(.data.usbd_hid_strings) refers to standard_hid_core.o(.data.serial_string) for [Anonymous Symbol]
-    standard_hid_core.o(.data.hid_desc) refers to standard_hid_core.o(.data.hid_dev_desc) for hid_dev_desc
-    standard_hid_core.o(.data.hid_desc) refers to standard_hid_core.o(.data.hid_config_desc) for hid_config_desc
-    standard_hid_core.o(.data.hid_desc) refers to standard_hid_core.o(.data.usbd_hid_strings) for [Anonymous Symbol]
-    standard_hid_core.o(.data.hid_class) refers to standard_hid_core.o(.text.hid_init) for hid_init
-    standard_hid_core.o(.data.hid_class) refers to standard_hid_core.o(.text.hid_deinit) for hid_deinit
-    standard_hid_core.o(.data.hid_class) refers to standard_hid_core.o(.text.hid_req_handler) for hid_req_handler
-    standard_hid_core.o(.data.hid_class) refers to standard_hid_core.o(.text.hid_data_in_handler) for hid_data_in_handler
+    keyboard.o(.text.hid_init) refers to keyboard.o(.text.usbd_ep_init) for usbd_ep_init
+    keyboard.o(.text.hid_init) refers to keyboard.o(.bss.hid_init.hid_handler) for [Anonymous Symbol]
+    keyboard.o(.text.hid_init) refers to keyboard.o(.data.hid_config_desc) for hid_config_desc
+    keyboard.o(.text.hid_init) refers to keyboard.o(.data.hid_class) for hid_class
+    keyboard.o(.ARM.exidx.text.hid_init) refers to keyboard.o(.text.hid_init) for [Anonymous Symbol]
+    keyboard.o(.text.hid_deinit) refers to keyboard.o(.text.usbd_ep_deinit) for usbd_ep_deinit
+    keyboard.o(.ARM.exidx.text.hid_deinit) refers to keyboard.o(.text.hid_deinit) for [Anonymous Symbol]
+    keyboard.o(.text.hid_req_handler) refers to keyboard.o(.text.usb_transc_config) for usb_transc_config
+    keyboard.o(.text.hid_req_handler) refers to keyboard.o(.data.hid_config_desc) for hid_config_desc
+    keyboard.o(.text.hid_req_handler) refers to keyboard.o(.rodata.hid_report_desc) for hid_report_desc
+    keyboard.o(.ARM.exidx.text.hid_req_handler) refers to keyboard.o(.text.hid_req_handler) for [Anonymous Symbol]
+    keyboard.o(.text.hid_data_in_handler) refers to usbd_core.o(.text.usbd_ep_send) for usbd_ep_send
+    keyboard.o(.ARM.exidx.text.hid_data_in_handler) refers to keyboard.o(.text.hid_data_in_handler) for [Anonymous Symbol]
+    keyboard.o(.ARM.exidx.text.hid_itfop_register) refers to keyboard.o(.text.hid_itfop_register) for [Anonymous Symbol]
+    keyboard.o(.text.hid_report_send) refers to usbd_core.o(.text.usbd_ep_send) for usbd_ep_send
+    keyboard.o(.ARM.exidx.text.hid_report_send) refers to keyboard.o(.text.hid_report_send) for [Anonymous Symbol]
+    keyboard.o(.ARM.exidx.text.usbd_ep_init) refers to keyboard.o(.text.usbd_ep_init) for [Anonymous Symbol]
+    keyboard.o(.ARM.exidx.text.usbd_ep_deinit) refers to keyboard.o(.text.usbd_ep_deinit) for [Anonymous Symbol]
+    keyboard.o(.ARM.exidx.text.usb_transc_config) refers to keyboard.o(.text.usb_transc_config) for [Anonymous Symbol]
+    keyboard.o(.data.usbd_hid_strings) refers to keyboard.o(.data.usbd_language_id_desc) for [Anonymous Symbol]
+    keyboard.o(.data.usbd_hid_strings) refers to keyboard.o(.data.manufacturer_string) for [Anonymous Symbol]
+    keyboard.o(.data.usbd_hid_strings) refers to keyboard.o(.data.product_string) for [Anonymous Symbol]
+    keyboard.o(.data.usbd_hid_strings) refers to keyboard.o(.data.serial_string) for [Anonymous Symbol]
+    keyboard.o(.data.hid_desc) refers to keyboard.o(.data.hid_dev_desc) for hid_dev_desc
+    keyboard.o(.data.hid_desc) refers to keyboard.o(.data.hid_config_desc) for hid_config_desc
+    keyboard.o(.data.hid_desc) refers to keyboard.o(.data.usbd_hid_strings) for [Anonymous Symbol]
+    keyboard.o(.data.hid_class) refers to keyboard.o(.text.hid_init) for hid_init
+    keyboard.o(.data.hid_class) refers to keyboard.o(.text.hid_deinit) for hid_deinit
+    keyboard.o(.data.hid_class) refers to keyboard.o(.text.hid_req_handler) for hid_req_handler
+    keyboard.o(.data.hid_class) refers to keyboard.o(.text.hid_data_in_handler) for hid_data_in_handler
     startup_gd32l23x.o(RESET) refers to startup_gd32l23x.o(STACK) for __initial_sp
     startup_gd32l23x.o(RESET) refers to startup_gd32l23x.o(.text) for Reset_Handler
     startup_gd32l23x.o(RESET) refers to gd32l23x_it.o(.text.NMI_Handler) for NMI_Handler
@@ -1543,16 +1543,16 @@ Removing Unused input sections from the image.
     Removing usbd_transc.o(.ARM.exidx.text._usb_in0_transc), (8 bytes).
     Removing usbd_transc.o(.ARM.exidx.text.usb_0len_packet_send), (8 bytes).
     Removing usbd_transc.o(.ARM.exidx.text.usbd_ep_stall), (8 bytes).
-    Removing standard_hid_core.o(.text), (0 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_init), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_deinit), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_req_handler), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_data_in_handler), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_itfop_register), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.hid_report_send), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.usbd_ep_init), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.usbd_ep_deinit), (8 bytes).
-    Removing standard_hid_core.o(.ARM.exidx.text.usb_transc_config), (8 bytes).
+    Removing keyboard.o(.text), (0 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_init), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_deinit), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_req_handler), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_data_in_handler), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_itfop_register), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.hid_report_send), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.usbd_ep_init), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.usbd_ep_deinit), (8 bytes).
+    Removing keyboard.o(.ARM.exidx.text.usb_transc_config), (8 bytes).
     Removing startup_gd32l23x.o(HEAP), (1024 bytes).
 
 864 unused section(s) (total 27523 bytes) removed from the image.
@@ -1598,8 +1598,8 @@ Image Symbol Table
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     hid_keyboard_itf.c                       0x00000000   Number         0  hid_keyboard_itf.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    keyboard.c                               0x00000000   Number         0  keyboard.o ABSOLUTE
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
-    standard_hid_core.c                      0x00000000   Number         0  standard_hid_core.o ABSOLUTE
     system_gd32l23x.c                        0x00000000   Number         0  system_gd32l23x.o ABSOLUTE
     usbd_core.c                              0x00000000   Number         0  usbd_core.o ABSOLUTE
     usbd_enum.c                              0x00000000   Number         0  usbd_enum.o ABSOLUTE
@@ -1682,21 +1682,21 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08000c1c   Section        0  usbd_enum.o(.text._usb_str_desc_get)
     [Anonymous Symbol]                       0x08000c48   Section        0  gd32l23x_gpio.o(.text.gpio_input_bit_get)
     [Anonymous Symbol]                       0x08000c72   Section        0  gd32l23x_gpio.o(.text.gpio_mode_set)
-    hid_data_in_handler                      0x08000d01   Thumb Code    58  standard_hid_core.o(.text.hid_data_in_handler)
-    [Anonymous Symbol]                       0x08000d00   Section        0  standard_hid_core.o(.text.hid_data_in_handler)
-    hid_deinit                               0x08000d3b   Thumb Code    24  standard_hid_core.o(.text.hid_deinit)
-    [Anonymous Symbol]                       0x08000d3a   Section        0  standard_hid_core.o(.text.hid_deinit)
-    hid_init                                 0x08000d55   Thumb Code    80  standard_hid_core.o(.text.hid_init)
-    [Anonymous Symbol]                       0x08000d54   Section        0  standard_hid_core.o(.text.hid_init)
-    __arm_cp.0_0                             0x08000da4   Number         4  standard_hid_core.o(.text.hid_init)
-    [Anonymous Symbol]                       0x08000da8   Section        0  standard_hid_core.o(.text.hid_itfop_register)
+    hid_data_in_handler                      0x08000d01   Thumb Code    58  keyboard.o(.text.hid_data_in_handler)
+    [Anonymous Symbol]                       0x08000d00   Section        0  keyboard.o(.text.hid_data_in_handler)
+    hid_deinit                               0x08000d3b   Thumb Code    24  keyboard.o(.text.hid_deinit)
+    [Anonymous Symbol]                       0x08000d3a   Section        0  keyboard.o(.text.hid_deinit)
+    hid_init                                 0x08000d55   Thumb Code    80  keyboard.o(.text.hid_init)
+    [Anonymous Symbol]                       0x08000d54   Section        0  keyboard.o(.text.hid_init)
+    __arm_cp.0_0                             0x08000da4   Number         4  keyboard.o(.text.hid_init)
+    [Anonymous Symbol]                       0x08000da8   Section        0  keyboard.o(.text.hid_itfop_register)
     hid_key_data_send                        0x08000dd3   Thumb Code    88  hid_keyboard_itf.o(.text.hid_key_data_send)
     [Anonymous Symbol]                       0x08000dd2   Section        0  hid_keyboard_itf.o(.text.hid_key_data_send)
-    [Anonymous Symbol]                       0x08000e2a   Section        0  standard_hid_core.o(.text.hid_report_send)
-    hid_req_handler                          0x08000e59   Thumb Code   336  standard_hid_core.o(.text.hid_req_handler)
-    [Anonymous Symbol]                       0x08000e58   Section        0  standard_hid_core.o(.text.hid_req_handler)
-    __arm_cp.2_0                             0x08000fa8   Number         4  standard_hid_core.o(.text.hid_req_handler)
-    __arm_cp.2_1                             0x08000fac   Number         4  standard_hid_core.o(.text.hid_req_handler)
+    [Anonymous Symbol]                       0x08000e2a   Section        0  keyboard.o(.text.hid_report_send)
+    hid_req_handler                          0x08000e59   Thumb Code   336  keyboard.o(.text.hid_req_handler)
+    [Anonymous Symbol]                       0x08000e58   Section        0  keyboard.o(.text.hid_req_handler)
+    __arm_cp.2_0                             0x08000fa8   Number         4  keyboard.o(.text.hid_req_handler)
+    __arm_cp.2_1                             0x08000fac   Number         4  keyboard.o(.text.hid_req_handler)
     int_to_unicode                           0x08000fb1   Thumb Code   114  usbd_enum.o(.text.int_to_unicode)
     [Anonymous Symbol]                       0x08000fb0   Section        0  usbd_enum.o(.text.int_to_unicode)
     key_config                               0x08001025   Thumb Code    24  hid_keyboard_itf.o(.text.key_config)
@@ -1752,8 +1752,8 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08001396   Section        0  usbd_enum.o(.text.usb_transc_config)
     usb_transc_config                        0x080013bd   Thumb Code    38  usbd_transc.o(.text.usb_transc_config)
     [Anonymous Symbol]                       0x080013bc   Section        0  usbd_transc.o(.text.usb_transc_config)
-    usb_transc_config                        0x080013e3   Thumb Code    38  standard_hid_core.o(.text.usb_transc_config)
-    [Anonymous Symbol]                       0x080013e2   Section        0  standard_hid_core.o(.text.usb_transc_config)
+    usb_transc_config                        0x080013e3   Thumb Code    38  keyboard.o(.text.usb_transc_config)
+    [Anonymous Symbol]                       0x080013e2   Section        0  keyboard.o(.text.usb_transc_config)
     usbd_address_set                         0x08001409   Thumb Code    20  usbd_lld_core.o(.text.usbd_address_set)
     [Anonymous Symbol]                       0x08001408   Section        0  usbd_lld_core.o(.text.usbd_address_set)
     __arm_cp.3_0                             0x0800141c   Number         4  usbd_lld_core.o(.text.usbd_address_set)
@@ -1778,14 +1778,14 @@ Image Symbol Table
     usbd_ep_data_write                       0x0800161d   Thumb Code   140  usbd_lld_core.o(.text.usbd_ep_data_write)
     [Anonymous Symbol]                       0x0800161c   Section        0  usbd_lld_core.o(.text.usbd_ep_data_write)
     __arm_cp.11_1                            0x080016a8   Number         4  usbd_lld_core.o(.text.usbd_ep_data_write)
-    usbd_ep_deinit                           0x080016ad   Thumb Code    30  standard_hid_core.o(.text.usbd_ep_deinit)
-    [Anonymous Symbol]                       0x080016ac   Section        0  standard_hid_core.o(.text.usbd_ep_deinit)
+    usbd_ep_deinit                           0x080016ad   Thumb Code    30  keyboard.o(.text.usbd_ep_deinit)
+    [Anonymous Symbol]                       0x080016ac   Section        0  keyboard.o(.text.usbd_ep_deinit)
     usbd_ep_disable                          0x080016cd   Thumb Code   188  usbd_lld_core.o(.text.usbd_ep_disable)
     [Anonymous Symbol]                       0x080016cc   Section        0  usbd_lld_core.o(.text.usbd_ep_disable)
     __arm_cp.9_1                             0x08001788   Number         4  usbd_lld_core.o(.text.usbd_ep_disable)
     __arm_cp.9_3                             0x0800178c   Number         4  usbd_lld_core.o(.text.usbd_ep_disable)
-    usbd_ep_init                             0x08001791   Thumb Code    38  standard_hid_core.o(.text.usbd_ep_init)
-    [Anonymous Symbol]                       0x08001790   Section        0  standard_hid_core.o(.text.usbd_ep_init)
+    usbd_ep_init                             0x08001791   Thumb Code    38  keyboard.o(.text.usbd_ep_init)
+    [Anonymous Symbol]                       0x08001790   Section        0  keyboard.o(.text.usbd_ep_init)
     usbd_ep_reset                            0x080017b9   Thumb Code   176  usbd_lld_core.o(.text.usbd_ep_reset)
     [Anonymous Symbol]                       0x080017b8   Section        0  usbd_lld_core.o(.text.usbd_ep_reset)
     __arm_cp.7_0                             0x08001868   Number         4  usbd_lld_core.o(.text.usbd_ep_reset)
@@ -1858,24 +1858,24 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08002264   Section        0  usbd_lld_core.o(.rodata.ep_type)
     _std_dev_req                             0x20000000   Data          52  usbd_enum.o(.data._std_dev_req)
     [Anonymous Symbol]                       0x20000000   Section        0  usbd_enum.o(.data._std_dev_req)
-    manufacturer_string                      0x200000b2   Data         130  standard_hid_core.o(.data.manufacturer_string)
-    [Anonymous Symbol]                       0x200000b2   Section        0  standard_hid_core.o(.data.manufacturer_string)
-    product_string                           0x20000134   Data         130  standard_hid_core.o(.data.product_string)
-    [Anonymous Symbol]                       0x20000134   Section        0  standard_hid_core.o(.data.product_string)
-    serial_string                            0x200001b6   Data         130  standard_hid_core.o(.data.serial_string)
-    [Anonymous Symbol]                       0x200001b6   Section        0  standard_hid_core.o(.data.serial_string)
+    manufacturer_string                      0x200000b2   Data         130  keyboard.o(.data.manufacturer_string)
+    [Anonymous Symbol]                       0x200000b2   Section        0  keyboard.o(.data.manufacturer_string)
+    product_string                           0x20000134   Data         130  keyboard.o(.data.product_string)
+    [Anonymous Symbol]                       0x20000134   Section        0  keyboard.o(.data.product_string)
+    serial_string                            0x200001b6   Data         130  keyboard.o(.data.serial_string)
+    [Anonymous Symbol]                       0x200001b6   Section        0  keyboard.o(.data.serial_string)
     std_desc_get                             0x20000238   Data          12  usbd_enum.o(.data.std_desc_get)
     [Anonymous Symbol]                       0x20000238   Section        0  usbd_enum.o(.data.std_desc_get)
-    usbd_hid_strings                         0x20000284   Data          16  standard_hid_core.o(.data.usbd_hid_strings)
-    [Anonymous Symbol]                       0x20000284   Section        0  standard_hid_core.o(.data.usbd_hid_strings)
-    usbd_language_id_desc                    0x20000294   Data           4  standard_hid_core.o(.data.usbd_language_id_desc)
-    [Anonymous Symbol]                       0x20000294   Section        0  standard_hid_core.o(.data.usbd_language_id_desc)
+    usbd_hid_strings                         0x20000284   Data          16  keyboard.o(.data.usbd_hid_strings)
+    [Anonymous Symbol]                       0x20000284   Section        0  keyboard.o(.data.usbd_hid_strings)
+    usbd_language_id_desc                    0x20000294   Data           4  keyboard.o(.data.usbd_language_id_desc)
+    [Anonymous Symbol]                       0x20000294   Section        0  keyboard.o(.data.usbd_language_id_desc)
     _usb_std_getstatus.status                0x20000298   Data           2  usbd_enum.o(.bss._usb_std_getstatus.status)
     [Anonymous Symbol]                       0x20000298   Section        0  usbd_enum.o(.bss._usb_std_getstatus.status)
     _usb_std_setconfiguration.config         0x2000029a   Data           1  usbd_enum.o(.bss._usb_std_setconfiguration.config)
     [Anonymous Symbol]                       0x2000029a   Section        0  usbd_enum.o(.bss._usb_std_setconfiguration.config)
-    hid_init.hid_handler                     0x2000029c   Data          20  standard_hid_core.o(.bss.hid_init.hid_handler)
-    [Anonymous Symbol]                       0x2000029c   Section        0  standard_hid_core.o(.bss.hid_init.hid_handler)
+    hid_init.hid_handler                     0x2000029c   Data          20  keyboard.o(.bss.hid_init.hid_handler)
+    [Anonymous Symbol]                       0x2000029c   Section        0  keyboard.o(.bss.hid_init.hid_handler)
     STACK                                    0x20000338   Section     1024  startup_gd32l23x.o(STACK)
 
     Global Symbols
@@ -1973,8 +1973,8 @@ Image Symbol Table
     _usb_setup_transc                        0x08000475   Thumb Code   200  usbd_transc.o(.text._usb_setup_transc)
     gpio_input_bit_get                       0x08000c49   Thumb Code    42  gd32l23x_gpio.o(.text.gpio_input_bit_get)
     gpio_mode_set                            0x08000c73   Thumb Code   142  gd32l23x_gpio.o(.text.gpio_mode_set)
-    hid_itfop_register                       0x08000da9   Thumb Code    42  standard_hid_core.o(.text.hid_itfop_register)
-    hid_report_send                          0x08000e2b   Thumb Code    44  standard_hid_core.o(.text.hid_report_send)
+    hid_itfop_register                       0x08000da9   Thumb Code    42  keyboard.o(.text.hid_itfop_register)
+    hid_report_send                          0x08000e2b   Thumb Code    44  keyboard.o(.text.hid_report_send)
     main                                     0x0800106d   Thumb Code    68  main.o(.text.main)
     nvic_config                              0x080010c1   Thumb Code    12  gd32l23x_usbd_hw.o(.text.nvic_config)
     nvic_irq_enable                          0x080010cd   Thumb Code    42  gd32l23x_misc.o(.text.nvic_irq_enable)
@@ -1992,15 +1992,15 @@ Image Symbol Table
     __scatterload_copy                       0x08002247   Thumb Code    14  handlers.o(i.__scatterload_copy)
     __scatterload_null                       0x08002255   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x08002257   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    hid_report_desc                          0x08002274   Data          46  standard_hid_core.o(.rodata.hid_report_desc)
+    hid_report_desc                          0x08002274   Data          46  keyboard.o(.rodata.hid_report_desc)
     Region$$Table$$Base                      0x080022a4   Number         0  anon$$obj.o(Region$$Table)
     Region$$Table$$Limit                     0x080022c4   Number         0  anon$$obj.o(Region$$Table)
     btable_ep                                0x20000034   Data           4  usbd_lld_core.o(.data.btable_ep)
     fop_handler                              0x20000038   Data           8  hid_keyboard_itf.o(.data.fop_handler)
-    hid_class                                0x20000040   Data          36  standard_hid_core.o(.data.hid_class)
-    hid_config_desc                          0x20000064   Data          41  standard_hid_core.o(.data.hid_config_desc)
-    hid_desc                                 0x20000090   Data          16  standard_hid_core.o(.data.hid_desc)
-    hid_dev_desc                             0x200000a0   Data          18  standard_hid_core.o(.data.hid_dev_desc)
+    hid_class                                0x20000040   Data          36  keyboard.o(.data.hid_class)
+    hid_config_desc                          0x20000064   Data          41  keyboard.o(.data.hid_config_desc)
+    hid_desc                                 0x20000090   Data          16  keyboard.o(.data.hid_desc)
+    hid_dev_desc                             0x200000a0   Data          18  keyboard.o(.data.hid_dev_desc)
     usbd_drv_handler                         0x20000244   Data          64  usbd_lld_core.o(.data.usbd_drv_handler)
     usb_hid                                  0x200002b0   Data         120  main.o(.bss.usb_hid)
     usbd_core                                0x20000328   Data           8  usbd_lld_core.o(.bss.usbd_core)
@@ -2065,15 +2065,15 @@ Memory Map of the image
     0x08000c1c   0x08000c1c   0x0000002c   Code   RO         1033    .text._usb_str_desc_get  usbd_enum.o
     0x08000c48   0x08000c48   0x0000002a   Code   RO          305    .text.gpio_input_bit_get  gd32l23x_gpio.o
     0x08000c72   0x08000c72   0x0000008e   Code   RO          293    .text.gpio_mode_set  gd32l23x_gpio.o
-    0x08000d00   0x08000d00   0x0000003a   Code   RO         1090    .text.hid_data_in_handler  standard_hid_core.o
-    0x08000d3a   0x08000d3a   0x00000018   Code   RO         1086    .text.hid_deinit    standard_hid_core.o
+    0x08000d00   0x08000d00   0x0000003a   Code   RO         1090    .text.hid_data_in_handler  keyboard.o
+    0x08000d3a   0x08000d3a   0x00000018   Code   RO         1086    .text.hid_deinit    keyboard.o
     0x08000d52   0x08000d52   0x00000002   PAD
-    0x08000d54   0x08000d54   0x00000054   Code   RO         1084    .text.hid_init      standard_hid_core.o
-    0x08000da8   0x08000da8   0x0000002a   Code   RO         1092    .text.hid_itfop_register  standard_hid_core.o
+    0x08000d54   0x08000d54   0x00000054   Code   RO         1084    .text.hid_init      keyboard.o
+    0x08000da8   0x08000da8   0x0000002a   Code   RO         1092    .text.hid_itfop_register  keyboard.o
     0x08000dd2   0x08000dd2   0x00000058   Code   RO           47    .text.hid_key_data_send  hid_keyboard_itf.o
-    0x08000e2a   0x08000e2a   0x0000002c   Code   RO         1094    .text.hid_report_send  standard_hid_core.o
+    0x08000e2a   0x08000e2a   0x0000002c   Code   RO         1094    .text.hid_report_send  keyboard.o
     0x08000e56   0x08000e56   0x00000002   PAD
-    0x08000e58   0x08000e58   0x00000158   Code   RO         1088    .text.hid_req_handler  standard_hid_core.o
+    0x08000e58   0x08000e58   0x00000158   Code   RO         1088    .text.hid_req_handler  keyboard.o
     0x08000fb0   0x08000fb0   0x00000072   Code   RO          995    .text.int_to_unicode  usbd_enum.o
     0x08001022   0x08001022   0x00000002   PAD
     0x08001024   0x08001024   0x0000001c   Code   RO           45    .text.key_config    hid_keyboard_itf.o
@@ -2099,7 +2099,7 @@ Memory Map of the image
     0x08001370   0x08001370   0x00000026   Code   RO          975    .text.usb_transc_config  usbd_core.o
     0x08001396   0x08001396   0x00000026   Code   RO         1021    .text.usb_transc_config  usbd_enum.o
     0x080013bc   0x080013bc   0x00000026   Code   RO         1069    .text.usb_transc_config  usbd_transc.o
-    0x080013e2   0x080013e2   0x00000026   Code   RO         1100    .text.usb_transc_config  standard_hid_core.o
+    0x080013e2   0x080013e2   0x00000026   Code   RO         1100    .text.usb_transc_config  keyboard.o
     0x08001408   0x08001408   0x00000018   Code   RO          915    .text.usbd_address_set  usbd_lld_core.o
     0x08001420   0x08001420   0x0000003c   Code   RO          989    .text.usbd_class_request  usbd_enum.o
     0x0800145c   0x0800145c   0x0000001a   Code   RO            4    .text.usbd_connect  main.o
@@ -2111,10 +2111,10 @@ Memory Map of the image
     0x0800150a   0x0800150a   0x00000002   PAD
     0x0800150c   0x0800150c   0x00000110   Code   RO          933    .text.usbd_ep_data_read  usbd_lld_core.o
     0x0800161c   0x0800161c   0x00000090   Code   RO          931    .text.usbd_ep_data_write  usbd_lld_core.o
-    0x080016ac   0x080016ac   0x0000001e   Code   RO         1098    .text.usbd_ep_deinit  standard_hid_core.o
+    0x080016ac   0x080016ac   0x0000001e   Code   RO         1098    .text.usbd_ep_deinit  keyboard.o
     0x080016ca   0x080016ca   0x00000002   PAD
     0x080016cc   0x080016cc   0x000000c4   Code   RO          927    .text.usbd_ep_disable  usbd_lld_core.o
-    0x08001790   0x08001790   0x00000026   Code   RO         1096    .text.usbd_ep_init  standard_hid_core.o
+    0x08001790   0x08001790   0x00000026   Code   RO         1096    .text.usbd_ep_init  keyboard.o
     0x080017b6   0x080017b6   0x00000002   PAD
     0x080017b8   0x080017b8   0x000000c0   Code   RO          923    .text.usbd_ep_reset  usbd_lld_core.o
     0x08001878   0x08001878   0x00000038   Code   RO          929    .text.usbd_ep_rx_enable  usbd_lld_core.o
@@ -2139,7 +2139,7 @@ Memory Map of the image
     0x08002254   0x08002254   0x00000002   Code   RO         1150    i.__scatterload_null  mc_p.l(handlers.o)
     0x08002256   0x08002256   0x0000000e   Code   RO         1151    i.__scatterload_zeroinit  mc_p.l(handlers.o)
     0x08002264   0x08002264   0x00000010   Data   RO          946    .rodata.ep_type     usbd_lld_core.o
-    0x08002274   0x08002274   0x0000002e   Data   RO         1107    .rodata.hid_report_desc  standard_hid_core.o
+    0x08002274   0x08002274   0x0000002e   Data   RO         1107    .rodata.hid_report_desc  keyboard.o
     0x080022a2   0x080022a2   0x00000002   PAD
     0x080022a4   0x080022a4   0x00000020   Data   RO         1148    Region$$Table       anon$$obj.o
 
@@ -2151,22 +2151,22 @@ Memory Map of the image
     0x20000000   COMPRESSED   0x00000034   Data   RW         1035    .data._std_dev_req  usbd_enum.o
     0x20000034   COMPRESSED   0x00000004   Data   RW          943    .data.btable_ep     usbd_lld_core.o
     0x20000038   COMPRESSED   0x00000008   Data   RW           51    .data.fop_handler   hid_keyboard_itf.o
-    0x20000040   COMPRESSED   0x00000024   Data   RW         1106    .data.hid_class     standard_hid_core.o
-    0x20000064   COMPRESSED   0x00000029   Data   RW         1103    .data.hid_config_desc  standard_hid_core.o
+    0x20000040   COMPRESSED   0x00000024   Data   RW         1106    .data.hid_class     keyboard.o
+    0x20000064   COMPRESSED   0x00000029   Data   RW         1103    .data.hid_config_desc  keyboard.o
     0x2000008d   COMPRESSED   0x00000003   PAD
-    0x20000090   COMPRESSED   0x00000010   Data   RW         1105    .data.hid_desc      standard_hid_core.o
-    0x200000a0   COMPRESSED   0x00000012   Data   RW         1102    .data.hid_dev_desc  standard_hid_core.o
-    0x200000b2   COMPRESSED   0x00000082   Data   RW         1110    .data.manufacturer_string  standard_hid_core.o
-    0x20000134   COMPRESSED   0x00000082   Data   RW         1111    .data.product_string  standard_hid_core.o
-    0x200001b6   COMPRESSED   0x00000082   Data   RW         1109    .data.serial_string  standard_hid_core.o
+    0x20000090   COMPRESSED   0x00000010   Data   RW         1105    .data.hid_desc      keyboard.o
+    0x200000a0   COMPRESSED   0x00000012   Data   RW         1102    .data.hid_dev_desc  keyboard.o
+    0x200000b2   COMPRESSED   0x00000082   Data   RW         1110    .data.manufacturer_string  keyboard.o
+    0x20000134   COMPRESSED   0x00000082   Data   RW         1111    .data.product_string  keyboard.o
+    0x200001b6   COMPRESSED   0x00000082   Data   RW         1109    .data.serial_string  keyboard.o
     0x20000238   COMPRESSED   0x0000000c   Data   RW         1037    .data.std_desc_get  usbd_enum.o
     0x20000244   COMPRESSED   0x00000040   Data   RW          944    .data.usbd_drv_handler  usbd_lld_core.o
-    0x20000284   COMPRESSED   0x00000010   Data   RW         1104    .data.usbd_hid_strings  standard_hid_core.o
-    0x20000294   COMPRESSED   0x00000004   Data   RW         1108    .data.usbd_language_id_desc  standard_hid_core.o
+    0x20000284   COMPRESSED   0x00000010   Data   RW         1104    .data.usbd_hid_strings  keyboard.o
+    0x20000294   COMPRESSED   0x00000004   Data   RW         1108    .data.usbd_language_id_desc  keyboard.o
     0x20000298        -       0x00000002   Zero   RW         1036    .bss._usb_std_getstatus.status  usbd_enum.o
     0x2000029a        -       0x00000001   Zero   RW         1038    .bss._usb_std_setconfiguration.config  usbd_enum.o
     0x2000029b   COMPRESSED   0x00000001   PAD
-    0x2000029c        -       0x00000014   Zero   RW         1112    .bss.hid_init.hid_handler  standard_hid_core.o
+    0x2000029c        -       0x00000014   Zero   RW         1112    .bss.hid_init.hid_handler  keyboard.o
     0x200002b0        -       0x00000078   Zero   RW            6    .bss.usb_hid        main.o
     0x20000328        -       0x00000008   Zero   RW          945    .bss.usbd_core      usbd_lld_core.o
     0x20000330        -       0x00000004   Zero   RW          979    .bss.usbd_int_fops  usbd_core.o
@@ -2181,24 +2181,24 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       184          0          0          0          0       4634   gd32l23x_gpio.o
-        18          0          0          0          0        745   gd32l23x_it.o
-       262         20          0          0          0       4612   gd32l23x_misc.o
-        68          4          0          0          0      13724   gd32l23x_rcu.o
-        36          4          0          0          0       2899   gd32l23x_usbd_hw.o
-       160          4          0          8          0       4860   hid_keyboard_itf.o
-       110         16          0          0        120       3661   main.o
-       702         12         46        521         20       7726   standard_hid_core.o
-        28          8        340          0       1024        796   startup_gd32l23x.o
-       400         56          0          0          0       1935   system_gd32l23x.o
-       288         16          0          0          4       4769   usbd_core.o
-      2426         32          0         64          3      10089   usbd_enum.o
-      2252        112         16         68          8       8407   usbd_lld_core.o
-       816         40          0          0          0       5917   usbd_lld_int.o
-       546          0          0          0          0       5461   usbd_transc.o
+       184          0          0          0          0       4627   gd32l23x_gpio.o
+        18          0          0          0          0        739   gd32l23x_it.o
+       262         20          0          0          0       4606   gd32l23x_misc.o
+        68          4          0          0          0      13717   gd32l23x_rcu.o
+        36          4          0          0          0       2892   gd32l23x_usbd_hw.o
+       160          4          0          8          0       4853   hid_keyboard_itf.o
+       702         12         46        521         20       7547   keyboard.o
+       110         16          0          0        120       3654   main.o
+        28          8        340          0       1024        788   startup_gd32l23x.o
+       400         56          0          0          0       1928   system_gd32l23x.o
+       288         16          0          0          4       4762   usbd_core.o
+      2426         32          0         64          3      10082   usbd_enum.o
+      2252        112         16         68          8       8400   usbd_lld_core.o
+       816         40          0          0          0       5910   usbd_lld_int.o
+       546          0          0          0          0       5454   usbd_transc.o
 
     ----------------------------------------------------------------------
-      8320        324        436        664       1184      80235   Object Totals
+      8320        324        436        664       1184      79959   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         24          0          2          3          5          0   (incl. Padding)
 
@@ -2238,8 +2238,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8464        340        436        664       1184      80267   Grand Totals
-      8464        340        436        304       1184      80267   ELF Image Totals (compressed)
+      8464        340        436        664       1184      79991   Grand Totals
+      8464        340        436        304       1184      79991   ELF Image Totals (compressed)
       8464        340        436        304          0          0   ROM Totals
 
 ==============================================================================

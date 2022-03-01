@@ -1,5 +1,8 @@
-./objects/gd32l233c_start.o: ..\..\..\Utilities\gd32l233c_start.c \
-  ..\..\..\Utilities\gd32l233c_start.h \
+./objects/keyboard.o: ..\src\keyboard.c \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\device\Include\usbd_transc.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\device\Include\usbd_core.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\device\Include\usb_ch9_std.h \
+  ..\inc\usbd_conf.h \
   ..\..\..\..\GD32L23x_Firmware_Library\CMSIS\GD\GD32L23x\Include\gd32l23x.h \
   C:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm23.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -34,4 +37,10 @@
   ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_trng.h \
   ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_slcd.h \
   ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_lptimer.h \
-  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_vref.h
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_vref.h \
+  ..\..\..\Utilities\gd32l233c_start.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\class\device\hid\Include\standard_hid_core.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\device\Include\usbd_enum.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\class\device\hid\Include\usb_hid.h \
+  ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\device\Include\usb_ch9_std.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

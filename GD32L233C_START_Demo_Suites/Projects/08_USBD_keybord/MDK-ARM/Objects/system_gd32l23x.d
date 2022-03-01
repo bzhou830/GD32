@@ -1,10 +1,10 @@
 ./objects/system_gd32l23x.o: ..\src\system_gd32l23x.c \
   ..\..\..\..\GD32L23x_Firmware_Library\CMSIS\GD\GD32L23x\Include\gd32l23x.h \
-  C:\Users\Chou_\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm23.h \
+  C:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm23.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  C:\Users\Chou_\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h \
-  C:\Users\Chou_\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h \
-  C:\Users\Chou_\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h \
+  C:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h \
+  C:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h \
+  C:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h \
   ..\..\..\..\GD32L23x_Firmware_Library\CMSIS\GD\GD32L23x\Include\system_gd32l23x.h \
   ..\inc\gd32l23x_libopt.h \
   ..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_standard_peripheral\Include\gd32l23x_adc.h \

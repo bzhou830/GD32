@@ -529,9 +529,9 @@
           <GroupName>USBD_Class</GroupName>
           <Files>
             <File>
-              <FileName>standard_hid_core.c</FileName>
+              <FileName>keyboard.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\GD32L23x_Firmware_Library\GD32L23x_usbd_library\class\device\hid\Source\standard_hid_core.c</FilePath>
+              <FilePath>..\src\keyboard.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -22,7 +22,7 @@
 ".\objects\usbd_enum.o"
 ".\objects\usbd_pwr.o"
 ".\objects\usbd_transc.o"
-".\objects\standard_hid_core.o"
+".\objects\keyboard.o"
 ".\objects\startup_gd32l23x.o"
 --library_type=microlib --strict --scatter ".\Objects\Project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

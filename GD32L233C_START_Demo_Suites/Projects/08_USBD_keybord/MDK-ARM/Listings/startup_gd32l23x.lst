@@ -565,11 +565,11 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M23 --depend=.\o
 bjects\startup_gd32l23x.d -o.\objects\startup_gd32l23x.o -I.\RTE\_GD32L233C_STA
-RT -IC:\Users\Chou_\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include 
---predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 536" --pred
-efine="_RTE_ SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_gd32l
-23x.lst ..\..\..\..\GD32L23x_Firmware_Library\CMSIS\GD\GD32L23x\Source\ARM\star
-tup_gd32l23x.s
+RT -IC:\Users\binean\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+ --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 536" --pre
+define="_RTE_ SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_gd32
+l23x.lst ..\..\..\..\GD32L23x_Firmware_Library\CMSIS\GD\GD32L23x\Source\ARM\sta
+rtup_gd32l23x.s
 
 
 

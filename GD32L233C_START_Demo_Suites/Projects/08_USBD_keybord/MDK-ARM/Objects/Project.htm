@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Feb 22 21:25:43 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Mar  1 16:26:45 2022
 <BR><P>
 <H3>Maximum Stack Usage =        128 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -102,11 +102,11 @@ Function Pointers
  <LI><a href="#[a]">_usb_std_setinterface</a> from usbd_enum.o(.text._usb_std_setinterface) referenced 2 times from usbd_enum.o(.data._std_dev_req)
  <LI><a href="#[b]">_usb_std_synchframe</a> from usbd_enum.o(.text._usb_std_synchframe) referenced 2 times from usbd_enum.o(.data._std_dev_req)
  <LI><a href="#[14]">_usb_str_desc_get</a> from usbd_enum.o(.text._usb_str_desc_get) referenced 2 times from usbd_enum.o(.data.std_desc_get)
- <LI><a href="#[11]">hid_data_in_handler</a> from standard_hid_core.o(.text.hid_data_in_handler) referenced 2 times from standard_hid_core.o(.data.hid_class)
- <LI><a href="#[f]">hid_deinit</a> from standard_hid_core.o(.text.hid_deinit) referenced 2 times from standard_hid_core.o(.data.hid_class)
- <LI><a href="#[e]">hid_init</a> from standard_hid_core.o(.text.hid_init) referenced 2 times from standard_hid_core.o(.data.hid_class)
+ <LI><a href="#[11]">hid_data_in_handler</a> from keyboard.o(.text.hid_data_in_handler) referenced 2 times from keyboard.o(.data.hid_class)
+ <LI><a href="#[f]">hid_deinit</a> from keyboard.o(.text.hid_deinit) referenced 2 times from keyboard.o(.data.hid_class)
+ <LI><a href="#[e]">hid_init</a> from keyboard.o(.text.hid_init) referenced 2 times from keyboard.o(.data.hid_class)
  <LI><a href="#[d]">hid_key_data_send</a> from hid_keyboard_itf.o(.text.hid_key_data_send) referenced 2 times from hid_keyboard_itf.o(.data.fop_handler)
- <LI><a href="#[10]">hid_req_handler</a> from standard_hid_core.o(.text.hid_req_handler) referenced 2 times from standard_hid_core.o(.data.hid_class)
+ <LI><a href="#[10]">hid_req_handler</a> from keyboard.o(.text.hid_req_handler) referenced 2 times from keyboard.o(.data.hid_class)
  <LI><a href="#[c]">key_config</a> from hid_keyboard_itf.o(.text.key_config) referenced 2 times from hid_keyboard_itf.o(.data.fop_handler)
  <LI><a href="#[65]">main</a> from main.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
  <LI><a href="#[18]">usbd_address_set</a> from usbd_lld_core.o(.text.usbd_address_set) referenced 2 times from usbd_lld_core.o(.data.usbd_drv_handler)
@@ -418,13 +418,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
 </UL>
 
-<P><STRONG><a name="[88]"></a>hid_itfop_register</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, standard_hid_core.o(.text.hid_itfop_register))
+<P><STRONG><a name="[88]"></a>hid_itfop_register</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, keyboard.o(.text.hid_itfop_register))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = hid_itfop_register
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[82]"></a>hid_report_send</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, standard_hid_core.o(.text.hid_report_send))
+<P><STRONG><a name="[82]"></a>hid_report_send</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, keyboard.o(.text.hid_report_send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_send
@@ -873,47 +873,47 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_stall_transc
 </UL>
 
-<P><STRONG><a name="[11]"></a>hid_data_in_handler</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, standard_hid_core.o(.text.hid_data_in_handler))
+<P><STRONG><a name="[11]"></a>hid_data_in_handler</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, keyboard.o(.text.hid_data_in_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = hid_data_in_handler &rArr; usbd_ep_send &rArr; usb_transc_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_send
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> standard_hid_core.o(.data.hid_class)
+<BR>[Address Reference Count : 1]<UL><LI> keyboard.o(.data.hid_class)
 </UL>
-<P><STRONG><a name="[f]"></a>hid_deinit</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, standard_hid_core.o(.text.hid_deinit))
+<P><STRONG><a name="[f]"></a>hid_deinit</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, keyboard.o(.text.hid_deinit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = hid_deinit &rArr; usbd_ep_deinit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_deinit
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> standard_hid_core.o(.data.hid_class)
+<BR>[Address Reference Count : 1]<UL><LI> keyboard.o(.data.hid_class)
 </UL>
-<P><STRONG><a name="[e]"></a>hid_init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, standard_hid_core.o(.text.hid_init))
+<P><STRONG><a name="[e]"></a>hid_init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, keyboard.o(.text.hid_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = hid_init &rArr; usbd_ep_init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_init
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> standard_hid_core.o(.data.hid_class)
+<BR>[Address Reference Count : 1]<UL><LI> keyboard.o(.data.hid_class)
 </UL>
-<P><STRONG><a name="[10]"></a>hid_req_handler</STRONG> (Thumb, 336 bytes, Stack size 56 bytes, standard_hid_core.o(.text.hid_req_handler))
+<P><STRONG><a name="[10]"></a>hid_req_handler</STRONG> (Thumb, 336 bytes, Stack size 56 bytes, keyboard.o(.text.hid_req_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = hid_req_handler &rArr; usb_transc_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_transc_config
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> standard_hid_core.o(.data.hid_class)
+<BR>[Address Reference Count : 1]<UL><LI> keyboard.o(.data.hid_class)
 </UL>
-<P><STRONG><a name="[83]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, standard_hid_core.o(.text.usb_transc_config))
+<P><STRONG><a name="[83]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, keyboard.o(.text.usb_transc_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = usb_transc_config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_req_handler
 </UL>
 
-<P><STRONG><a name="[7f]"></a>usbd_ep_deinit</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, standard_hid_core.o(.text.usbd_ep_deinit))
+<P><STRONG><a name="[7f]"></a>usbd_ep_deinit</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, keyboard.o(.text.usbd_ep_deinit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = usbd_ep_deinit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_deinit
 </UL>
 
-<P><STRONG><a name="[80]"></a>usbd_ep_init</STRONG> (Thumb, 38 bytes, Stack size 32 bytes, standard_hid_core.o(.text.usbd_ep_init))
+<P><STRONG><a name="[80]"></a>usbd_ep_init</STRONG> (Thumb, 38 bytes, Stack size 32 bytes, keyboard.o(.text.usbd_ep_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = usbd_ep_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_init
