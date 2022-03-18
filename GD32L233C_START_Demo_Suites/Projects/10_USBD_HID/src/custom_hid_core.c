@@ -2,7 +2,7 @@
 #include "custom_hid_core.h"
 #include <string.h>
 
-#define USBD_VID                     0x28E9U
+#define USBD_VID                     0x8090U
 #define USBD_PID                     0x128AU
 
 /* Note:it should use the C99 standard when compiling the below codes */
@@ -426,39 +426,37 @@ static void custom_hid_data_out(usb_dev *udev, uint8_t ep_num)
         switch(hid->data[0]) {
         case 0x11:
             if(RESET != hid->data[1]) {
-                /* turn on led1  */
-                gd_eval_led_on(LED1);
+                gpio_bit_set(GPIOA, GPIO_PIN_7);
             } else {
-                gd_eval_led_off(LED1);
+                gpio_bit_reset(GPIOA, GPIO_PIN_7);
             }
             break;
         case 0x12:
             if(RESET != hid->data[1]) {
-                gd_eval_led_on(LED2);
+                gpio_bit_set(GPIOA, GPIO_PIN_8);
             } else {
-                gd_eval_led_off(LED2);
+                gpio_bit_reset(GPIOA, GPIO_PIN_8);
             }
             break;
         case 0x13:
             if(RESET != hid->data[1]) {
-                gd_eval_led_on(LED3);
+                gpio_bit_set(GPIOC, GPIO_PIN_6);
             } else {
-                gd_eval_led_off(LED3);
+                gpio_bit_reset(GPIOC, GPIO_PIN_6);
             }
             break;
         case 0x14:
             if(RESET != hid->data[1]) {
-                gd_eval_led_on(LED4);
+                gpio_bit_set(GPIOC, GPIO_PIN_7);
             } else {
-                gd_eval_led_off(LED4);
+                gpio_bit_reset(GPIOC, GPIO_PIN_7);
             }
             break;
         default:
             /* turn off all LEDs */
-            gd_eval_led_off(LED1);
-            gd_eval_led_off(LED2);
-            gd_eval_led_off(LED3);
-            gd_eval_led_off(LED4);
+						/* reset LED GPIO pin */
+						gpio_bit_reset(GPIOA, GPIO_PIN_7 | GPIO_PIN_8);
+						gpio_bit_reset(GPIOC, GPIO_PIN_6 | GPIO_PIN_7);
             break;
         }
 

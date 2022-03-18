@@ -50,8 +50,13 @@ hid_fop_handler fop_handler = {
 static void key_config(void)
 {
     /* keys configuration */
-//    gd_eval_key_init(KEY_WAKEUP, KEY_MODE_EXTI);
-//    gd_eval_key_init(KEY_TAMPER, KEY_MODE_EXTI);
+		rcu_periph_clock_enable(RCU_GPIOA);
+    rcu_periph_clock_enable(RCU_GPIOC);
+    
+    gpio_mode_set(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_7 | GPIO_PIN_8);
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_7 | GPIO_PIN_8);
+    gpio_mode_set(GPIOC, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_6 | GPIO_PIN_7);
+    gpio_output_options_set(GPIOC, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_6 | GPIO_PIN_7);
 }
 
 /*!
@@ -62,9 +67,7 @@ static void key_config(void)
 */
 static void led_config(void)
 {
-    /* initialize LEDs */
-//    gd_eval_led_init(LED1);
-//    gd_eval_led_init(LED2);
-//    gd_eval_led_init(LED3);
-//    gd_eval_led_init(LED4);
+    /* reset LED GPIO pin */
+    gpio_bit_reset(GPIOA, GPIO_PIN_7 | GPIO_PIN_8);
+    gpio_bit_reset(GPIOC, GPIO_PIN_6 | GPIO_PIN_7);
 }
