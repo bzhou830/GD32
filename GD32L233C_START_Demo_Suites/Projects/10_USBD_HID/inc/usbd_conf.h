@@ -53,8 +53,8 @@ OF SUCH DAMAGE.
 #define CUSTOMHID_IN_EP                    EP_IN(1U)
 #define CUSTOMHID_OUT_EP                   EP_OUT(1U)
 
-#define CUSTOMHID_IN_PACKET                2U
-#define CUSTOMHID_OUT_PACKET               2U
+#define CUSTOMHID_IN_PACKET                16U
+#define CUSTOMHID_OUT_PACKET               16U
 
 /* endpoint0, RX/TX buffers address offset */
 #define EP0_RX_ADDR                        0x40U

@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define USBD_VID                     0x8090U
-#define USBD_PID                     0x128AU
+#define USBD_PID                     0x1234U
 
 /* Note:it should use the C99 standard when compiling the below codes */
 /* USB standard device descriptor */
@@ -36,7 +36,7 @@ usb_hid_desc_config_set custom_hid_config_desc = {
             .bLength         = sizeof(usb_desc_config),
             .bDescriptorType = USB_DESCTYPE_CONFIG
         },
-        .wTotalLength         = DESC_LEN_CONFIG,
+        .wTotalLength         = DESC_LEN_CONFIG,  //�������������ϵ��ܳ��ȣ���������������������ӿ��������������������˵��������ȡ�
         .bNumInterfaces       = 0x01U,
         .bConfigurationValue  = 0x01U,
         .iConfiguration       = 0x00U,
@@ -44,6 +44,7 @@ usb_hid_desc_config_set custom_hid_config_desc = {
         .bMaxPower            = 0x32U
     },
 
+    //�ӿ�������
     .hid_itf =
     {
         .header =
@@ -60,20 +61,22 @@ usb_hid_desc_config_set custom_hid_config_desc = {
         .iInterface           = 0x00U
     },
 
+    //HID������
     .hid_vendor =
     {
         .header =
         {
             .bLength         = sizeof(usb_desc_hid),
-            .bDescriptorType = USB_DESCTYPE_HID
+            .bDescriptorType = USB_DESCTYPE_HID //0x21
         },
         .bcdHID               = 0x0111U,
         .bCountryCode         = 0x00U,
         .bNumDescriptors      = 0x01U,
         .bDescriptorType      = USB_DESCTYPE_REPORT,
-        .wDescriptorLength    = DESC_LEN_REPORT,
+        .wDescriptorLength    = DESC_LEN_REPORT, //�¼��������ĳ��ȡ��¼�������Ϊ������������
     },
 
+    //����˵�������
     .hid_epin =
     {
         .header =
@@ -83,10 +86,11 @@ usb_hid_desc_config_set custom_hid_config_desc = {
         },
         .bEndpointAddress     = CUSTOMHID_IN_EP,
         .bmAttributes         = USB_EP_ATTR_INT,
-        .wMaxPacketSize       = CUSTOMHID_IN_PACKET,
-        .bInterval            = 0x20U
+        .wMaxPacketSize       = CUSTOMHID_IN_PACKET, //�ö˵�����������˵�1��������Ϊ16�ֽڡ�
+        .bInterval            = 0x20U //�˵��ѯ��ʱ�䣬0x20ms
     },
 
+    //����˵�������
     .hid_epout =
     {
         .header =
@@ -172,69 +176,55 @@ usb_class custom_hid_class = {
 };
 
 const __ALIGNED(2) uint8_t customhid_report_descriptor[DESC_LEN_REPORT] = {
-    0x06, 0x00, 0xFF,  /* USAGE_PAGE (Vendor Defined: 0xFF00) */
-    0x09, 0x00,        /* USAGE (Custom Device)               */
-    0xa1, 0x01,        /* COLLECTION (Application)            */
+ //ÿ�п�ʼ�ĵ�һ�ֽ�Ϊ����Ŀ��ǰ׺��ǰ׺�ĸ�ʽΪ��
+ //D7~D4��bTag��D3~D2��bType��D1~D0��bSize�����·ֱ��ÿ����Ŀע�͡�
+ 
+ //����һ��ȫ�֣�bTypeΪ1����Ŀ������;ҳѡ��Ϊ��ͨ����Generic Desktop Page��
+ //�����1�ֽ����ݣ�bSizeΪ1����������ֽ����Ͳ�ע���ˣ��Լ�����bSize���жϡ�
+ 0x05, 0x01, // USAGE_PAGE (Generic Desktop)
+ 
+ //����һ���ֲ���bTypeΪ2����Ŀ����;ѡ��Ϊ0x00������ͨ����ҳ�У�
+ //����;��δ����ģ����ʹ�ø���;�������ϣ���ôϵͳ���������
+ //������׼ϵͳ�豸���Ӷ��ͳ���һ���û��Զ����HID�豸��
+ 0x09, 0x00, // USAGE (0)
+ 
+ //����һ������Ŀ��bTypeΪ0����Ŀ�������ϣ������������0x01��ʾ
+ //�ü�����һ��Ӧ�ü��ϡ�����������ǰ������;ҳ����;����Ϊ
+ //�û��Զ��塣
+ 0xa1, 0x01, // COLLECTION (Application)
 
-    /* led 1 */
-    0x85, 0x11,     /* REPORT_ID (0x11)          */
-    0x09, 0x01,     /* USAGE (LED 1)             */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x08,     /* REPORT_SIZE (8)           */
-    0x95, 0x01,     /* REPORT_COUNT (1)          */
-    0x91, 0x82,     /* OUTPUT (Data,Var,Abs,Vol) */
-
-    /* led 2 */
-    0x85, 0x12,     /* REPORT_ID (0x12)          */
-    0x09, 0x02,     /* USAGE (LED 2)             */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x08,     /* REPORT_SIZE (8)           */
-    0x95, 0x01,     /* REPORT_COUNT (1)          */
-    0x91, 0x82,     /* OUTPUT (Data,Var,Abs,Vol) */
-
-    /* led 3 */
-    0x85, 0x13,     /* REPORT_ID (0x13)          */
-    0x09, 0x03,     /* USAGE (LED 3)             */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x08,     /* REPORT_SIZE (8)           */
-    0x95, 0x01,     /* REPORT_COUNT (1)          */
-    0x91, 0x82,     /* OUTPUT (Data,Var,Abs,Vol) */
-
-    /* led 4 */
-    0x85, 0x14,     /* REPORT_ID (0x14)          */
-    0x09, 0x04,     /* USAGE (LED 4)             */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x08,     /* REPORT_SIZE (8)           */
-    0x95, 0x01,     /* REPORT_COUNT (1)          */
-    0x91, 0x82,     /* OUTPUT (Data,Var,Abs,Vol) */
-
-    /* wakeup key */
-    0x85, 0x15,     /* REPORT_ID (0x15)          */
-    0x09, 0x05,     /* USAGE (Push Button)       */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x01,     /* REPORT_SIZE (1)           */
-    0x81, 0x02,     /* INPUT (Data,Var,Abs,Vol)  */
-
-    0x75, 0x07,     /* REPORT_SIZE (7)           */
-    0x81, 0x03,     /* INPUT (Cnst,Var,Abs,Vol)  */
-
-    /* tamper key */
-    0x85, 0x16,     /* REPORT_ID (0x16)          */
-    0x09, 0x06,     /* USAGE (Push Button)       */
-    0x15, 0x00,     /* LOGICAL_MINIMUM (0)       */
-    0x25, 0x01,     /* LOGICAL_MAXIMUM (1)       */
-    0x75, 0x01,     /* REPORT_SIZE (1)           */
-    0x81, 0x02,     /* INPUT (Data,Var,Abs,Vol)  */
-
-    0x75, 0x07,     /* REPORT_SIZE (7)           */
-    0x81, 0x03,     /* INPUT (Cnst,Var,Abs,Vol)  */
-
-    0xc0            /* END_COLLECTION            */
+ //����һ��ȫ����Ŀ��˵���߼�ֵ��СֵΪ0��
+ 0x15, 0x00, //     LOGICAL_MINIMUM (0)
+ 
+ //����һ��ȫ����Ŀ��˵���߼�ֵ���Ϊ255��
+ 0x25, 0xff, //     LOGICAL_MAXIMUM (255)
+ 
+ //����һ���ֲ���Ŀ��˵����;����СֵΪ1��
+ 0x19, 0x01, //     USAGE_MINIMUM (1)
+ 
+ //����һ���ֲ���Ŀ��˵����;�����ֵ8��
+ 0x29, 0x08, //     USAGE_MAXIMUM (8) 
+ 
+ //����һ��ȫ����Ŀ��˵�������������Ϊ�˸���
+ 0x95, 0x08, //     REPORT_COUNT (8)
+ 
+ //����һ��ȫ����Ŀ��˵��ÿ��������ĳ���Ϊ8bit����1�ֽڡ�
+ 0x75, 0x08, //     REPORT_SIZE (8)
+ 
+ //����һ������Ŀ��˵����8������Ϊ8bit����������Ϊ���롣
+ 0x81, 0x02, //     INPUT (Data,Var,Abs)
+ 
+ //����һ���ֲ���Ŀ��˵����;����СֵΪ1��
+ 0x19, 0x01, //     USAGE_MINIMUM (1)
+ 
+ //����һ���ֲ���Ŀ��˵����;�����ֵ8��
+ 0x29, 0x08, //     USAGE_MAXIMUM (8) 
+ 
+ //����һ������Ŀ������������ݣ�8�ֽڣ�ע��ǰ���ȫ����Ŀ����
+ 0x91, 0x02, //   OUTPUT (Data,Var,Abs)
+ 
+ //�����������Ŀ�����ر�ǰ��ļ��ϡ�bSizeΪ0�����Ժ���û���ݡ�
+ 0xc0        // END_COLLECTION
 };
 
 /*!
@@ -421,45 +411,34 @@ static void custom_hid_data_out(usb_dev *udev, uint8_t ep_num)
 {
     custom_hid_handler *hid = (custom_hid_handler *)udev->class_data[CUSTOM_HID_INTERFACE];
 
-    if(CUSTOMHID_OUT_EP == ep_num) {
+    if(CUSTOMHID_OUT_EP == ep_num) 
+    {
+        if(hid->data[0] & 0x01)
+            gpio_bit_set(GPIOA, GPIO_PIN_7);
+        else
+            gpio_bit_reset(GPIOA, GPIO_PIN_7);
+        
+        if(hid->data[0] & 0x02)
+            gpio_bit_set(GPIOA, GPIO_PIN_8);
+        else
+            gpio_bit_reset(GPIOA, GPIO_PIN_8);
+        
+        if(hid->data[0] & 0x04)
+            gpio_bit_set(GPIOC, GPIO_PIN_6);
+        else
+            gpio_bit_reset(GPIOC, GPIO_PIN_6);
+        
+        if(hid->data[0] & 0x08)
+            gpio_bit_set(GPIOC, GPIO_PIN_7);
+        else
+            gpio_bit_reset(GPIOC, GPIO_PIN_7);
 
-        switch(hid->data[0]) {
-        case 0x11:
-            if(RESET != hid->data[1]) {
-                gpio_bit_set(GPIOA, GPIO_PIN_7);
-            } else {
-                gpio_bit_reset(GPIOA, GPIO_PIN_7);
-            }
-            break;
-        case 0x12:
-            if(RESET != hid->data[1]) {
-                gpio_bit_set(GPIOA, GPIO_PIN_8);
-            } else {
-                gpio_bit_reset(GPIOA, GPIO_PIN_8);
-            }
-            break;
-        case 0x13:
-            if(RESET != hid->data[1]) {
-                gpio_bit_set(GPIOC, GPIO_PIN_6);
-            } else {
-                gpio_bit_reset(GPIOC, GPIO_PIN_6);
-            }
-            break;
-        case 0x14:
-            if(RESET != hid->data[1]) {
-                gpio_bit_set(GPIOC, GPIO_PIN_7);
-            } else {
-                gpio_bit_reset(GPIOC, GPIO_PIN_7);
-            }
-            break;
-        default:
+        if(hid->data[0] > 0x08)
+        {
             /* turn off all LEDs */
-						/* reset LED GPIO pin */
-						gpio_bit_reset(GPIOA, GPIO_PIN_7 | GPIO_PIN_8);
-						gpio_bit_reset(GPIOC, GPIO_PIN_6 | GPIO_PIN_7);
-            break;
+            gpio_bit_reset(GPIOA, GPIO_PIN_7 | GPIO_PIN_8);
+            gpio_bit_reset(GPIOC, GPIO_PIN_6 | GPIO_PIN_7);
         }
-
         usbd_ep_recev(udev, CUSTOMHID_OUT_EP, hid->data, 2U);
     }
 }

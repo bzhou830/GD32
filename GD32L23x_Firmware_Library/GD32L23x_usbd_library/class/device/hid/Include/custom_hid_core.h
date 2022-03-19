@@ -38,7 +38,7 @@ OF SUCH DAMAGE.
 #include "usbd_enum.h"
 #include "usb_hid.h"
 
-#define DESC_LEN_REPORT             96U
+#define DESC_LEN_REPORT             27U
 #define DESC_LEN_CONFIG             41U
 
 #define MAX_PERIPH_NUM              4U

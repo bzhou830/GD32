@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Fri Mar 18 18:21:32 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sat Mar 19 14:13:42 2022
 <BR><P>
 <H3>Maximum Stack Usage =        120 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -347,9 +347,9 @@ Global Symbols
 
 <P><STRONG><a name="[a0]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[a1]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[a1]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
 
-<P><STRONG><a name="[a2]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[a2]"></a>__decompress0</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
 
 <P><STRONG><a name="[28]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, gd32l23x_it.o(.text.HardFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_gd32l23x.o(RESET)
@@ -426,16 +426,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;custom_hid_data_out
 </UL>
 
-<P><STRONG><a name="[86]"></a>gpio_mode_set</STRONG> (Thumb, 142 bytes, Stack size 28 bytes, gd32l23x_gpio.o(.text.gpio_mode_set))
+<P><STRONG><a name="[85]"></a>gpio_mode_set</STRONG> (Thumb, 142 bytes, Stack size 28 bytes, gd32l23x_gpio.o(.text.gpio_mode_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = gpio_mode_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_config
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
 </UL>
 
 <P><STRONG><a name="[87]"></a>gpio_output_options_set</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, gd32l23x_gpio.o(.text.gpio_output_options_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = gpio_output_options_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_config
 </UL>
 
 <P><STRONG><a name="[66]"></a>main</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, main.o(.text.main))
@@ -476,15 +477,15 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rcu_config &rArr; rcu_usbd_clock_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_usbd_clock_config
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[85]"></a>rcu_periph_clock_enable</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_periph_clock_enable))
+<P><STRONG><a name="[86]"></a>rcu_periph_clock_enable</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_periph_clock_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = rcu_periph_clock_enable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_config
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
 </UL>
 
@@ -571,19 +572,20 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11]"></a>key_config</STRONG> (Thumb, 88 bytes, Stack size 40 bytes, custom_hid_itf.o(.text.key_config))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = key_config &rArr; gpio_output_options_set
+<P><STRONG><a name="[11]"></a>key_config</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, custom_hid_itf.o(.text.key_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = key_config &rArr; gpio_mode_set
 </UL>
-<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_output_options_set
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> custom_hid_itf.o(.data.fop_handler)
 </UL>
-<P><STRONG><a name="[12]"></a>led_config</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, custom_hid_itf.o(.text.led_config))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = led_config &rArr; gpio_bit_reset
+<P><STRONG><a name="[12]"></a>led_config</STRONG> (Thumb, 104 bytes, Stack size 40 bytes, custom_hid_itf.o(.text.led_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = led_config &rArr; gpio_output_options_set
 </UL>
-<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bit_reset
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_output_options_set
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_bit_reset
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> custom_hid_itf.o(.data.fop_handler)
 </UL>
