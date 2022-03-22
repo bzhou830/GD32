@@ -39,7 +39,7 @@
             // 
             // button_open_device
             // 
-            this.button_open_device.Location = new System.Drawing.Point(514, 12);
+            this.button_open_device.Location = new System.Drawing.Point(259, 12);
             this.button_open_device.Name = "button_open_device";
             this.button_open_device.Size = new System.Drawing.Size(75, 23);
             this.button_open_device.TabIndex = 0;
@@ -52,22 +52,22 @@
             this.comboBoxDeviceList.FormattingEnabled = true;
             this.comboBoxDeviceList.Location = new System.Drawing.Point(12, 12);
             this.comboBoxDeviceList.Name = "comboBoxDeviceList";
-            this.comboBoxDeviceList.Size = new System.Drawing.Size(496, 20);
+            this.comboBoxDeviceList.Size = new System.Drawing.Size(227, 20);
             this.comboBoxDeviceList.TabIndex = 1;
             // 
             // textBox_Info
             // 
-            this.textBox_Info.Location = new System.Drawing.Point(12, 228);
+            this.textBox_Info.Location = new System.Drawing.Point(10, 144);
             this.textBox_Info.Multiline = true;
             this.textBox_Info.Name = "textBox_Info";
             this.textBox_Info.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Info.Size = new System.Drawing.Size(577, 246);
+            this.textBox_Info.Size = new System.Drawing.Size(322, 246);
             this.textBox_Info.TabIndex = 2;
             // 
             // button_led1
             // 
             this.button_led1.Image = global::HIDApp.Properties.Resources.led_off;
-            this.button_led1.Location = new System.Drawing.Point(49, 60);
+            this.button_led1.Location = new System.Drawing.Point(15, 55);
             this.button_led1.Name = "button_led1";
             this.button_led1.Size = new System.Drawing.Size(44, 43);
             this.button_led1.TabIndex = 3;
@@ -77,7 +77,7 @@
             // button_led2
             // 
             this.button_led2.Image = global::HIDApp.Properties.Resources.led_off;
-            this.button_led2.Location = new System.Drawing.Point(118, 60);
+            this.button_led2.Location = new System.Drawing.Point(105, 55);
             this.button_led2.Name = "button_led2";
             this.button_led2.Size = new System.Drawing.Size(44, 43);
             this.button_led2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // button_led3
             // 
             this.button_led3.Image = global::HIDApp.Properties.Resources.led_off;
-            this.button_led3.Location = new System.Drawing.Point(183, 60);
+            this.button_led3.Location = new System.Drawing.Point(195, 55);
             this.button_led3.Name = "button_led3";
             this.button_led3.Size = new System.Drawing.Size(44, 43);
             this.button_led3.TabIndex = 3;
@@ -97,7 +97,7 @@
             // button_led4
             // 
             this.button_led4.Image = global::HIDApp.Properties.Resources.led_off;
-            this.button_led4.Location = new System.Drawing.Point(249, 60);
+            this.button_led4.Location = new System.Drawing.Point(288, 55);
             this.button_led4.Name = "button_led4";
             this.button_led4.Size = new System.Drawing.Size(44, 43);
             this.button_led4.TabIndex = 3;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 486);
+            this.ClientSize = new System.Drawing.Size(344, 402);
             this.Controls.Add(this.button_led4);
             this.Controls.Add(this.button_led3);
             this.Controls.Add(this.button_led2);

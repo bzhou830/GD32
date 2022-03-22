@@ -48,21 +48,38 @@ namespace HIDApp
         private void button_led1_Click(object sender, EventArgs e)
         {
             //button_led1.Image = HIDApp.Properties.Resources.led_on;
+            byte[] b = { 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            report r = new report(0, b);
+            Device.Write(r);
+
+            button_led1.Image = HIDApp.Properties.Resources.led_on;
         }
 
         private void button_led2_Click(object sender, EventArgs e)
         {
-            //
+            byte[] b = { 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            report r = new report(0, b);
+            Device.Write(r);
+
+            button_led2.Image = HIDApp.Properties.Resources.led_on;
         }
 
         private void button_led3_Click(object sender, EventArgs e)
         {
-            //
+            byte[] b = { 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            report r = new report(0, b);
+            Device.Write(r);
+
+            button_led3.Image = HIDApp.Properties.Resources.led_on;
         }
 
         private void button_led4_Click(object sender, EventArgs e)
         {
-            //
+            byte[] b = { 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            report r = new report(0, b);
+            Device.Write(r);
+
+            button_led4.Image = HIDApp.Properties.Resources.led_on;
         }
     }
 }
