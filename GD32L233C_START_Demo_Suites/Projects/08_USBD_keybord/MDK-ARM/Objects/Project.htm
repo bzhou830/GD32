@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Mar  1 16:26:45 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sun Sep  4 15:21:49 2022
 <BR><P>
-<H3>Maximum Stack Usage =        128 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        160 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-hid_key_data_send &rArr; hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
+hid_key_data_send &rArr; sendchar &rArr; hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
 <P>
 <H3>
 Mutually Recursive functions
@@ -133,7 +133,7 @@ Global Symbols
 <P><STRONG><a name="[67]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_gd32l23x.o(.text)
 </UL>
-<P><STRONG><a name="[98]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[9a]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[6b]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -143,15 +143,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[99]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[9b]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[9a]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[9c]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[9b]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[9d]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[9c]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[9e]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[9d]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[9f]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[25]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_gd32l23x.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_gd32l23x.o(RESET)
@@ -344,11 +344,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[9e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[a0]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[9f]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+<P><STRONG><a name="[a1]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
 
-<P><STRONG><a name="[a0]"></a>__decompress0</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+<P><STRONG><a name="[a2]"></a>__decompress0</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
 
 <P><STRONG><a name="[27]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, gd32l23x_it.o(.text.HardFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_gd32l23x.o(RESET)
@@ -406,58 +406,58 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbd_core.o(.text.usbd_init)
 </UL>
-<P><STRONG><a name="[86]"></a>gpio_input_bit_get</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, gd32l23x_gpio.o(.text.gpio_input_bit_get))
+<P><STRONG><a name="[87]"></a>gpio_input_bit_get</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, gd32l23x_gpio.o(.text.gpio_input_bit_get))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = gpio_input_bit_get
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_state
 </UL>
 
-<P><STRONG><a name="[85]"></a>gpio_mode_set</STRONG> (Thumb, 142 bytes, Stack size 28 bytes, gd32l23x_gpio.o(.text.gpio_mode_set))
+<P><STRONG><a name="[86]"></a>gpio_mode_set</STRONG> (Thumb, 142 bytes, Stack size 28 bytes, gd32l23x_gpio.o(.text.gpio_mode_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = gpio_mode_set
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
 </UL>
 
-<P><STRONG><a name="[88]"></a>hid_itfop_register</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, keyboard.o(.text.hid_itfop_register))
+<P><STRONG><a name="[8a]"></a>hid_itfop_register</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, keyboard.o(.text.hid_itfop_register))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = hid_itfop_register
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[82]"></a>hid_report_send</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, keyboard.o(.text.hid_report_send))
+<P><STRONG><a name="[83]"></a>hid_report_send</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, keyboard.o(.text.hid_report_send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_key_data_send
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar
 </UL>
 
 <P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; usbd_init &rArr; serial_string_get &rArr; int_to_unicode
 </UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_init
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_config
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_itfop_register
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_connect
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_init
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_config
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_itfop_register
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_connect
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[8a]"></a>nvic_config</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, gd32l23x_usbd_hw.o(.text.nvic_config))
+<P><STRONG><a name="[8c]"></a>nvic_config</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, gd32l23x_usbd_hw.o(.text.nvic_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = nvic_config &rArr; nvic_irq_enable &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8c]"></a>nvic_irq_enable</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, gd32l23x_misc.o(.text.nvic_irq_enable))
+<P><STRONG><a name="[8e]"></a>nvic_irq_enable</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, gd32l23x_misc.o(.text.nvic_irq_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = nvic_irq_enable &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_config
+<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_config
 </UL>
 
 <P><STRONG><a name="[6f]"></a>nvic_vector_table_set</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, gd32l23x_misc.o(.text.nvic_vector_table_set))
@@ -466,34 +466,41 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[87]"></a>rcu_config</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, gd32l23x_usbd_hw.o(.text.rcu_config))
+<P><STRONG><a name="[89]"></a>rcu_config</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, gd32l23x_usbd_hw.o(.text.rcu_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rcu_config &rArr; rcu_usbd_clock_config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_usbd_clock_config
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_usbd_clock_config
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[84]"></a>rcu_periph_clock_enable</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_periph_clock_enable))
+<P><STRONG><a name="[85]"></a>rcu_periph_clock_enable</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_periph_clock_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = rcu_periph_clock_enable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
 </UL>
 
-<P><STRONG><a name="[8f]"></a>rcu_usbd_clock_config</STRONG> (Thumb, 28 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_usbd_clock_config))
+<P><STRONG><a name="[91]"></a>rcu_usbd_clock_config</STRONG> (Thumb, 28 bytes, Stack size 4 bytes, gd32l23x_rcu.o(.text.rcu_usbd_clock_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = rcu_usbd_clock_config
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_config
 </UL>
 
-<P><STRONG><a name="[90]"></a>serial_string_get</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, usbd_enum.o(.text.serial_string_get))
+<P><STRONG><a name="[92]"></a>serial_string_get</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, usbd_enum.o(.text.serial_string_get))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = serial_string_get &rArr; int_to_unicode
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_to_unicode
+<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_to_unicode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_init
+<BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_init
+</UL>
+
+<P><STRONG><a name="[88]"></a>sleep</STRONG> (Thumb, 76 bytes, Stack size 12 bytes, hid_keyboard_itf.o(.text.sleep))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = sleep
+</UL>
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_state
 </UL>
 
 <P><STRONG><a name="[77]"></a>usbd_class_request</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, usbd_enum.o(.text.usbd_class_request))
@@ -505,18 +512,18 @@ Global Symbols
 <P><STRONG><a name="[7e]"></a>usbd_ep_send</STRONG> (Thumb, 122 bytes, Stack size 48 bytes, usbd_core.o(.text.usbd_ep_send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = usbd_ep_send &rArr; usb_transc_config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_transc_config
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_transc_config
 </UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_report_send
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_report_send
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_isr
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_data_in_handler
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_ctl_data_in
 </UL>
 
-<P><STRONG><a name="[89]"></a>usbd_init</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, usbd_core.o(.text.usbd_init))
+<P><STRONG><a name="[8b]"></a>usbd_init</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, usbd_core.o(.text.usbd_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = usbd_init &rArr; serial_string_get &rArr; int_to_unicode
 </UL>
-<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_string_get
+<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_string_get
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -525,8 +532,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = usbd_isr &rArr; usbd_ep_send &rArr; usb_transc_config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_send
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_int_suspend
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resume_mcu
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_int_suspend
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resume_mcu
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LP_IRQHandler
 </UL>
@@ -543,25 +550,25 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_usb_setup_transc
 </UL>
 
-<P><STRONG><a name="[a1]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[a3]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[a2]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[a4]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[a3]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[a5]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[8b]"></a>usbd_connect</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, main.o(.text.usbd_connect))
+<P><STRONG><a name="[8d]"></a>usbd_connect</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, main.o(.text.usbd_connect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = usbd_connect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d]"></a>hid_key_data_send</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, hid_keyboard_itf.o(.text.hid_key_data_send))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = hid_key_data_send &rArr; hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
+<P><STRONG><a name="[d]"></a>hid_key_data_send</STRONG> (Thumb, 162 bytes, Stack size 32 bytes, hid_keyboard_itf.o(.text.hid_key_data_send))
+<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = hid_key_data_send &rArr; sendchar &rArr; hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_report_send
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_state
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> hid_keyboard_itf.o(.data.fop_handler)
@@ -569,20 +576,30 @@ Local Symbols
 <P><STRONG><a name="[c]"></a>key_config</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, hid_keyboard_itf.o(.text.key_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = key_config &rArr; gpio_mode_set
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> hid_keyboard_itf.o(.data.fop_handler)
 </UL>
-<P><STRONG><a name="[81]"></a>key_state</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, hid_keyboard_itf.o(.text.key_state))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = key_state &rArr; gpio_input_bit_get
+<P><STRONG><a name="[81]"></a>key_state</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, hid_keyboard_itf.o(.text.key_state))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = key_state &rArr; sleep
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_input_bit_get
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_input_bit_get
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_key_data_send
 </UL>
 
-<P><STRONG><a name="[92]"></a>system_clock_48m_hxtal</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, system_gd32l23x.o(.text.system_clock_48m_hxtal))
+<P><STRONG><a name="[82]"></a>sendchar</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, hid_keyboard_itf.o(.text.sendchar))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = sendchar &rArr; hid_report_send &rArr; usbd_ep_send &rArr; usb_transc_config
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_report_send
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_key_data_send
+</UL>
+
+<P><STRONG><a name="[94]"></a>system_clock_48m_hxtal</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, system_gd32l23x.o(.text.system_clock_48m_hxtal))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = system_clock_48m_hxtal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_config
@@ -591,21 +608,21 @@ Local Symbols
 <P><STRONG><a name="[6e]"></a>system_clock_config</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_gd32l23x.o(.text.system_clock_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = system_clock_config &rArr; system_clock_48m_hxtal
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_48m_hxtal
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_48m_hxtal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[8e]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, gd32l23x_misc.o(.text.__NVIC_EnableIRQ))
+<P><STRONG><a name="[90]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, gd32l23x_misc.o(.text.__NVIC_EnableIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
 </UL>
 
-<P><STRONG><a name="[8d]"></a>__NVIC_SetPriority</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, gd32l23x_misc.o(.text.__NVIC_SetPriority))
+<P><STRONG><a name="[8f]"></a>__NVIC_SetPriority</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, gd32l23x_misc.o(.text.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
 </UL>
 
 <P><STRONG><a name="[18]"></a>usbd_address_set</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, usbd_lld_core.o(.text.usbd_address_set))
@@ -680,27 +697,27 @@ Local Symbols
 <P><STRONG><a name="[19]"></a>usbd_suspend</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, usbd_lld_core.o(.text.usbd_suspend))
 <BR>[Address Reference Count : 1]<UL><LI> usbd_lld_core.o(.data.usbd_drv_handler)
 </UL>
-<P><STRONG><a name="[97]"></a>resume_mcu</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.resume_mcu))
+<P><STRONG><a name="[99]"></a>resume_mcu</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.resume_mcu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = resume_mcu
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_isr
 </UL>
 
-<P><STRONG><a name="[95]"></a>usbd_int_suspend</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.usbd_int_suspend))
+<P><STRONG><a name="[97]"></a>usbd_int_suspend</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.usbd_int_suspend))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = usbd_int_suspend &rArr; usbd_to_suspend
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_to_suspend
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_to_suspend
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_isr
 </UL>
 
-<P><STRONG><a name="[96]"></a>usbd_to_suspend</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.usbd_to_suspend))
+<P><STRONG><a name="[98]"></a>usbd_to_suspend</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbd_lld_int.o(.text.usbd_to_suspend))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = usbd_to_suspend
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_int_suspend
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_int_suspend
 </UL>
 
-<P><STRONG><a name="[94]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, usbd_core.o(.text.usb_transc_config))
+<P><STRONG><a name="[96]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, usbd_core.o(.text.usb_transc_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = usb_transc_config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_send
@@ -799,10 +816,10 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbd_enum.o(.data.std_desc_get)
 </UL>
-<P><STRONG><a name="[91]"></a>int_to_unicode</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, usbd_enum.o(.text.int_to_unicode))
+<P><STRONG><a name="[93]"></a>int_to_unicode</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, usbd_enum.o(.text.int_to_unicode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = int_to_unicode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_string_get
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_string_get
 </UL>
 
 <P><STRONG><a name="[7b]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, usbd_enum.o(.text.usb_transc_config))
@@ -856,7 +873,7 @@ Local Symbols
 <P><STRONG><a name="[75]"></a>usb_stall_transc</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbd_transc.o(.text.usb_stall_transc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = usb_stall_transc &rArr; usbd_ep_stall
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_stall
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbd_ep_stall
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_usb_setup_transc
 </UL>
@@ -867,7 +884,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_usb_out0_transc
 </UL>
 
-<P><STRONG><a name="[93]"></a>usbd_ep_stall</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, usbd_transc.o(.text.usbd_ep_stall))
+<P><STRONG><a name="[95]"></a>usbd_ep_stall</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, usbd_transc.o(.text.usbd_ep_stall))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = usbd_ep_stall
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_stall_transc
@@ -897,11 +914,11 @@ Local Symbols
 <P><STRONG><a name="[10]"></a>hid_req_handler</STRONG> (Thumb, 336 bytes, Stack size 56 bytes, keyboard.o(.text.hid_req_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = hid_req_handler &rArr; usb_transc_config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_transc_config
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usb_transc_config
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> keyboard.o(.data.hid_class)
 </UL>
-<P><STRONG><a name="[83]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, keyboard.o(.text.usb_transc_config))
+<P><STRONG><a name="[84]"></a>usb_transc_config</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, keyboard.o(.text.usb_transc_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = usb_transc_config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hid_req_handler
